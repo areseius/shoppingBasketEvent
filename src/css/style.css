@@ -143,3 +143,73 @@ nav > a:not(:last-of-type) {
   height: 100%;
   width: 100%;
 }
+
+.basketPage {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.calculate {
+  height: 80vh;
+  width: 80%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgba(255, 0, 0, 0.629);
+  border-radius: 40px;
+}
+
+.calculate > i {
+  color: red;
+  font-size: 30px;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.basketProducts {
+  height: 88%;
+  width: 95%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+  overflow: auto;
+}
+
+.basketProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding-inline: 30px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+
+.basketProduct figure {
+  width: 150px;
+  height: 150px;
+}
+
+.basketProduct figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.basketProduct i {
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+}

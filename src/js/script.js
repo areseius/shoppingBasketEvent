@@ -3,6 +3,14 @@
 const home = document.querySelector(".home");
 const loading = document.querySelector(".loading");
 const count = document.querySelector(".shoppingCount");
+const basketPage = document.querySelector(".basketPage");
+const basketPageIcon = document.querySelector(".basketPageIcon");
+const close = document.querySelector(".close");
+const basketProducts = document.querySelector(".basketProducts");
+
+// -------------------------------------------------- other assignments
+
+const buyedProducts = {};
 
 // -------------------------------------------------- getting products
 
@@ -26,10 +34,10 @@ getProducts().then((data) => {
     for (let i = 0; i < products.length; i++) {
       html += `<article class="shopCard">
   <figure>
-    <img src="${products[i].url}" alt="" />
+    <img src="${products[i].url}" alt="${products[i].alt}" />
   </figure>
   <div class="cardInfo">
-    <h1>${products[i].price}</h1>
+    <h1>${products[i].price} ₼</h1>
     <h2>${products[i].name}</h2>
     <p>${products[i].desc}</p>
   </div>
@@ -53,6 +61,67 @@ home.addEventListener("click", (e) => {
   if (
     e.target.className == "basket" ||
     [...e.target.classList].includes("shop")
-  )
+  ) {
     count.textContent++;
+    let currentProduct =
+      e.target.parentElement.parentElement.children[0].children[0].alt;
+
+    buyedProducts[currentProduct]
+      ? buyedProducts[currentProduct][0]++
+      : (buyedProducts[currentProduct] = [
+          1,
+          e.target.parentElement.parentElement.children[1].children[0].textContent.split(
+            " "
+          )[0],
+          e.target.parentElement.parentElement.children[0].children[0].getAttribute(
+            "src"
+          ),
+          e.target.parentElement.parentElement.children[0].children[0].getAttribute(
+            "alt"
+          ),
+        ]);
+  }
+});
+
+// -------------------------------------------------- basket page
+
+basketPageIcon.addEventListener("click", () => {
+  basketPage.style.display = "block";
+
+  let html = "";
+
+  for (const key in buyedProducts) {
+    html += `<div class="basketProduct">
+    <figure>
+      <img src="${buyedProducts[key][2]}" alt="${buyedProducts[key][3]}" />
+    </figure>
+    <h1>Ədəd : <span>${buyedProducts[key][0]}</span></h1>
+    <i class="fa-solid fa-trash"></i>
+  </div>`;
+  }
+
+  basketProducts.innerHTML = html;
+});
+
+close.addEventListener("click", () => {
+  basketPage.style.display = "none";
+});
+
+// -------------------------------------------------- basket page inner
+
+basketPage.addEventListener("click", (e) => {
+  if (e.target.classList[1] == "fa-trash") {
+    const currentProduct = e.target.parentElement.children[0].children[0].alt;
+
+    if (buyedProducts[currentProduct][0] != 1) {
+      buyedProducts[currentProduct][0]--;
+      e.target.parentElement.children[1].children[0].textContent--;
+      count.textContent--;
+    } else {
+      e.target.parentElement.remove();
+      count.textContent--;
+      buyedProducts[currentProduct][0]--;
+      delete buyedProducts[currentProduct];
+    }
+  }
 });
