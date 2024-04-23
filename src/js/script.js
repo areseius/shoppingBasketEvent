@@ -7,10 +7,12 @@ const basketPage = document.querySelector(".basketPage");
 const basketPageIcon = document.querySelector(".basketPageIcon");
 const close = document.querySelector(".close");
 const basketProducts = document.querySelector(".basketProducts");
+const total = document.querySelector(".total");
 
 // -------------------------------------------------- other assignments
 
 const buyedProducts = {};
+let totalAmount = 0;
 
 // -------------------------------------------------- getting products
 
@@ -42,7 +44,10 @@ getProducts().then((data) => {
     <p>${products[i].desc}</p>
   </div>
   <div class="cardButtons">
-    <button class="basket">Səbətə at <i class="fa-solid fa-cart-shopping shop"></i></button>
+  <button class="basket">
+      <div class="basketWrapper"></div>
+      Səbətə at <i class="fa-solid fa-cart-shopping shop"></i>
+    </button>
     <i class="fa-regular fa-heart"></i>
   </div>
   </article>`;
@@ -58,25 +63,23 @@ getProducts().then((data) => {
 // -------------------------------------------------- increment basket count
 
 home.addEventListener("click", (e) => {
-  if (
-    e.target.className == "basket" ||
-    [...e.target.classList].includes("shop")
-  ) {
+  if (e.target.className == "basketWrapper") {
     count.textContent++;
     let currentProduct =
-      e.target.parentElement.parentElement.children[0].children[0].alt;
+      e.target.parentElement.parentElement.parentElement.children[0].children[0]
+        .alt;
 
     buyedProducts[currentProduct]
       ? buyedProducts[currentProduct][0]++
       : (buyedProducts[currentProduct] = [
           1,
-          e.target.parentElement.parentElement.children[1].children[0].textContent.split(
+          e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent.split(
             " "
           )[0],
-          e.target.parentElement.parentElement.children[0].children[0].getAttribute(
+          e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute(
             "src"
           ),
-          e.target.parentElement.parentElement.children[0].children[0].getAttribute(
+          e.target.parentElement.parentElement.parentElement.children[0].children[0].getAttribute(
             "alt"
           ),
         ]);
@@ -86,6 +89,12 @@ home.addEventListener("click", (e) => {
 // -------------------------------------------------- basket page
 
 basketPageIcon.addEventListener("click", () => {
+  for (const key in buyedProducts)
+    totalAmount += +buyedProducts[key][1] * +buyedProducts[key][0];
+
+  total.textContent = totalAmount.toFixed(2);
+  totalAmount = 0;
+
   basketPage.style.display = "block";
 
   let html = "";
@@ -95,7 +104,7 @@ basketPageIcon.addEventListener("click", () => {
     <figure>
       <img src="${buyedProducts[key][2]}" alt="${buyedProducts[key][3]}" />
     </figure>
-    <h1>Ədəd : <span>${buyedProducts[key][0]}</span></h1>
+    <h1>Ədəd : <span>${buyedProducts[key][0]}</span> x <span>${buyedProducts[key][1]}</span> ₼</h1>
     <i class="fa-solid fa-trash"></i>
   </div>`;
   }
@@ -117,11 +126,18 @@ basketPage.addEventListener("click", (e) => {
       buyedProducts[currentProduct][0]--;
       e.target.parentElement.children[1].children[0].textContent--;
       count.textContent--;
+      total.textContent = (
+        total.textContent - buyedProducts[currentProduct][1]
+      ).toFixed(2);
     } else {
       e.target.parentElement.remove();
       count.textContent--;
       buyedProducts[currentProduct][0]--;
+      total.textContent = (
+        total.textContent - buyedProducts[currentProduct][1]
+      ).toFixed(2);
       delete buyedProducts[currentProduct];
     }
   }
+  console.log(buyedProducts);
 });

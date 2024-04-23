@@ -118,12 +118,22 @@ nav > a:not(:last-of-type) {
   background-color: red;
   color: white;
   cursor: pointer;
+  position: relative;
 }
 .cardButtons > i {
   margin-right: 20px;
   color: red;
   font-size: 20px;
   cursor: pointer;
+}
+.basketWrapper {
+  background-color: purple;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
 }
 
 .loading {
@@ -175,11 +185,10 @@ nav > a:not(:last-of-type) {
 }
 
 .basketProducts {
-  height: 88%;
+  height: 85%;
   width: 95%;
-
   position: absolute;
-  top: 50%;
+  top: 49.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2%;
@@ -212,4 +221,10 @@ nav > a:not(:last-of-type) {
   color: red;
   font-size: 30px;
   cursor: pointer;
+}
+.totalH1 {
+  color: red;
+  position: absolute;
+  bottom: 20px;
+  right: 150px;
 }
