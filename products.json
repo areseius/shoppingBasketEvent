@@ -4,125 +4,143 @@
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "2",
     "url": "src/images/1.webp",
-    "alt": "saftali"
+    "alt": "saftali",
+    "nov" : "Meyvə"
   },
   {
     "name": "Alma",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "1",
     "url": "src/images/5.webp",
-    "alt": "alma"
+    "alt": "alma",
+    "nov" : "Meyvə"
   },
   {
     "name": "Soğan",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "3",
     "url": "src/images/4.webp",
-    "alt": "sogan"
+    "alt": "sogan",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Əjdaha meyvəsi",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "8",
     "url": "src/images/2.webp",
-    "alt": "ejdahaMeyvesi"
+    "alt": "ejdahaMeyvesi",
+    "nov" : "Meyvə"
   },
   {
     "name": "Kartof",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "4",
     "url": "src/images/3.jpg",
-    "alt": "kartof"
+    "alt": "kartof",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Portağal",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "5",
     "url": "src/images/6.jpg",
-    "alt": "portagal"
+    "alt": "portagal",
+    "nov" : "Meyvə"
   },
   {
     "name": "Şüyüd",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "0.40",
     "url": "src/images/7.jpg",
-    "alt": "suyud"
+    "alt": "suyud",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Turp",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "0.65",
     "url": "src/images/8.jpg",
-    "alt": "turp"
+    "alt": "turp",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Banan",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "2",
     "url": "src/images/9.webp",
-    "alt": "banan"
+    "alt": "banan",
+    "nov" : "Meyvə"
   },
   {
     "name": "Kivi",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "3",
     "url": "src/images/10.webp",
-    "alt": "kivi"
+    "alt": "kivi",
+    "nov" : "Meyvə"
   },
   {
     "name": "Kök",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "1.14",
     "url": "src/images/11.webp",
-    "alt": "kivi"
+    "alt": "kok",
+    "nov" : "Meyvə"
   },
   {
     "name": "Armud",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "2.20",
     "url": "src/images/12.webp",
-    "alt": "kivi"
+    "alt": "armud",
+    "nov" : "Meyvə"
   },
   {
     "name": "Ananas",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "5",
     "url": "src/images/13.webp",
-    "alt": "kivi"
+    "alt": "ananas",
+    "nov" : "Meyvə"
   },
   {
     "name": "Brokoli",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "3.29",
     "url": "src/images/14.webp",
-    "alt": "kivi"
+    "alt": "brokoli",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Badımcan",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "1.80",
     "url": "src/images/15.webp",
-    "alt": "kivi"
+    "alt": "badimcan",
+    "nov" : "Tərəvəz"
   },
   {
     "name": "Ağ üzüm",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "1.30",
     "url": "src/images/16.jpg",
-    "alt": "kivi"
+    "alt": "agUzum",
+    "nov" : "Meyvə"
   },
   {
     "name": "Fizalis",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "6.29",
     "url": "src/images/17.webp",
-    "alt": "kivi"
+    "alt": "fizalis",
+    "nov" : "Meyvə"
   },
   {
     "name": "Heyva",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
     "price": "3.10",
     "url": "src/images/18.webp",
-    "alt": "kivi"
+    "alt": "heyva",
+    "nov" : "Meyvə"
   }
 ]
