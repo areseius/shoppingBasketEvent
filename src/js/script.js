@@ -8,6 +8,8 @@ const basketPageIcon = document.querySelector(".basketPageIcon");
 const close = document.querySelector(".close");
 const basketProducts = document.querySelector(".basketProducts");
 const total = document.querySelector(".total");
+const banner = document.querySelector(".banner")
+const banner2 = document.querySelector(".banner2")
 
 // -------------------------------------------------- other assignments
 
@@ -56,6 +58,8 @@ getProducts().then((data) => {
     home.innerHTML = html;
 
     loading.style.display = "none";
+    banner.style.display = "block"
+    banner2.style.display = "block"
     home.style.display = "grid";
   }, 1000);
 });
