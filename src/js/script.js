@@ -10,10 +10,12 @@ const total = document.querySelector(".total");
 const banner = document.querySelector(".banner");
 const banner2 = document.querySelector(".banner2");
 const footer = document.querySelector("footer");
+const sign = document.querySelector(".sign");
+const clearBasket = document.querySelector(".clearBasket");
 
 // -------------------------------------------------- other assignments
 
-const buyedProducts = {};
+let buyedProducts = {};
 let totalAmount = 0;
 let products = [];
 
@@ -38,16 +40,35 @@ const calculateBasketAmount = () => {
   totalAmount = 0;
 };
 
-// -------------------------------------------------- upload products to the screen
+const checkBasketIsEmpty = (products) => {
+  if (Object.keys(products).length) {
+    clearBasket.classList.remove("disabled");
+    clearBasket.removeAttribute("disabled");
+  } else {
+    clearBasket.classList.add("disabled");
+    clearBasket.setAttribute("disabled", "true");
+  }
+};
 
-getProducts().then((data) => {
-  setTimeout(() => {
-    products = data;
+const buildBasketProductİtem = (product) => `<div class="basketProduct">
+    <div class="basketProductInfo">
+    <figure>
+      <img src="${product[1].url}" alt="${product[1].alt}" />
+    </figure>
+    <div>
+      <h1>${product[1].name}</h1>
+      <p>${product[1].nov}</p>
+    </div>
+</div>
+    <h1>Ədəd : <span>${product[0]}</span></h1>
 
-    let html = "";
+    <h1>Qiymət : ${product[1].price} ₼</h1>
 
-    for (const product of products) {
-      html += `<article class="shopCard">
+    <i class="fa-solid fa-trash"></i>
+  </div>`;
+
+const buildProductItem = (product) =>
+  `<article class="shopCard">
   <figure>
     <img src="${product.url}" alt="${product.alt}" />
   </figure>
@@ -64,7 +85,15 @@ getProducts().then((data) => {
     <i class="fa-regular fa-heart"></i>
   </div>
   </article>`;
-    }
+// -------------------------------------------------- upload products to the screen
+
+getProducts().then((data) => {
+  setTimeout(() => {
+    products = data;
+
+    let html = "";
+
+    for (const product of products) html += buildProductItem(product);
 
     home.innerHTML = html;
 
@@ -73,6 +102,7 @@ getProducts().then((data) => {
     banner2.style.display = "block";
     footer.style.display = "flex";
     home.style.display = "grid";
+    sign.style.display = "block";
   }, 1000);
 });
 
@@ -89,7 +119,7 @@ home.addEventListener("click", (e) => {
             .children,
         ].indexOf(e.target.parentElement.parentElement.parentElement)
       ];
-    console.log(currentProduct);
+
     buyedProducts[currentProduct.alt]
       ? buyedProducts[currentProduct.alt][0]++
       : (buyedProducts[currentProduct.alt] = [1, currentProduct]);
@@ -101,28 +131,14 @@ home.addEventListener("click", (e) => {
 basketPageIcon.addEventListener("click", () => {
   calculateBasketAmount();
 
+  checkBasketIsEmpty(buyedProducts);
+
   basketPage.style.display = "block";
 
   let html = "";
 
-  for (const key in buyedProducts) {
-    html += `<div class="basketProduct">
-    <div class="basketProductInfo">
-    <figure>
-      <img src="${buyedProducts[key][1].url}" alt="${buyedProducts[key][1].alt}" />
-    </figure>
-    <div>
-      <h1>${buyedProducts[key][1].name}</h1>
-      <p>${buyedProducts[key][1].nov}</p>
-    </div>
-</div>
-    <h1>Ədəd : ${buyedProducts[key][0]}</h1>
-
-    <h1>Qiymət : ${buyedProducts[key][1].price} ₼</h1>
-
-    <i class="fa-solid fa-trash"></i>
-  </div>`;
-  }
+  for (const key in buyedProducts)
+    html += buildBasketProductİtem(buyedProducts[key]);
 
   basketProducts.innerHTML = html;
 });
@@ -135,24 +151,40 @@ basketPage.children[0].children[0].addEventListener("click", () => {
 
 basketPage.addEventListener("click", (e) => {
   if (e.target.classList[1] == "fa-trash") {
-    const currentProduct =
-      e.target.parentElement.children[0].children[0].children[0].alt;
+    let [currentProduct, quantity] = [
+      e.target.parentElement.children[0].children[0].children[0].alt,
+      e.target.parentElement.children[1].children[0],
+    ];
 
     if (buyedProducts[currentProduct][0] != 1) {
       buyedProducts[currentProduct][0]--;
-      e.target.parentElement.children[1].children[0].textContent--;
+
+      quantity.textContent--;
       count.textContent--;
+
       total.textContent = (
         total.textContent - buyedProducts[currentProduct][1].price
       ).toFixed(2);
     } else {
       e.target.parentElement.remove();
       count.textContent--;
-      buyedProducts[currentProduct][0]--;
       total.textContent = (
         total.textContent - buyedProducts[currentProduct][1].price
       ).toFixed(2);
       delete buyedProducts[currentProduct];
     }
+    checkBasketIsEmpty(buyedProducts);
+  }
+});
+
+// -------------------------------------------------- clear basket
+
+clearBasket.addEventListener("click", () => {
+  if (confirm("Səbət təmizləmək istədiyinizə əminsiniz ?")) {
+    buyedProducts = {};
+    basketProducts.innerHTML = "";
+    count.textContent = 0;
+    total.textContent = "0.00";
+    checkBasketIsEmpty(buyedProducts);
   }
 });

@@ -254,11 +254,33 @@ nav > a:not(:last-of-type) {
   font-size: 30px;
   cursor: pointer;
 }
-.totalH1 {
-  color: red;
+.basketFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 20px;
   right: 150px;
+}
+
+.basketFooter h1 {
+  margin-left: 40px;
+  color: red;
+}
+.basketFooter button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.disabled {
+  background-color: gray !important;
 }
 
 .banner {
@@ -313,7 +335,8 @@ footer ul li a:hover {
   color: white;
   background-color: red;
 }
-.finisher {
+.sign {
+  display: none;
   margin-bottom: 10px;
   text-align: center;
   font-size: 15px;
