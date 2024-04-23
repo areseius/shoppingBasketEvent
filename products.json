@@ -68,5 +68,61 @@
     "price": "3",
     "url": "src/images/10.webp",
     "alt": "kivi"
+  },
+  {
+    "name": "Kök",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "1.14",
+    "url": "src/images/11.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Armud",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "2.20",
+    "url": "src/images/12.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Ananas",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "5",
+    "url": "src/images/13.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Brokoli",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "3.29",
+    "url": "src/images/14.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Badımcan",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "1.80",
+    "url": "src/images/15.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Ağ üzüm",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "1.30",
+    "url": "src/images/16.jpg",
+    "alt": "kivi"
+  },
+  {
+    "name": "Fizalis",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "6.29",
+    "url": "src/images/17.webp",
+    "alt": "kivi"
+  },
+  {
+    "name": "Heyva",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "3.10",
+    "url": "src/images/18.webp",
+    "alt": "kivi"
   }
 ]
