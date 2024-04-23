@@ -1,15 +1,21 @@
+// -------------------------------------------------- dom assignments
+
 const home = document.querySelector(".home");
 const loading = document.querySelector(".loading");
 const count = document.querySelector(".shoppingCount");
 
+// -------------------------------------------------- getting products
+
 const getProducts = async () => {
-  const url = "/projects/shoppingBasket/src/js/products.json";
+  const url = "/src/js/products.json";
   const response = await fetch(url);
 
   if (response.status != 200) return "";
 
   return response.json();
 };
+
+// -------------------------------------------------- display produtcs
 
 getProducts().then((data) => {
   setTimeout(() => {
@@ -40,6 +46,8 @@ getProducts().then((data) => {
     home.style.display = "grid";
   }, 1000);
 });
+
+// -------------------------------------------------- increment basket count
 
 home.addEventListener("click", (e) => {
   if (
