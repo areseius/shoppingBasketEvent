@@ -7,7 +7,7 @@ const count = document.querySelector(".shoppingCount");
 // -------------------------------------------------- getting products
 
 const getProducts = async () => {
-  const url = "/src/js/products.json";
+  const url = "src/js/products.json";
   const response = await fetch(url);
 
   if (response.status != 200) return "";
