@@ -8,8 +8,9 @@ const basketPageIcon = document.querySelector(".basketPageIcon");
 const close = document.querySelector(".close");
 const basketProducts = document.querySelector(".basketProducts");
 const total = document.querySelector(".total");
-const banner = document.querySelector(".banner")
-const banner2 = document.querySelector(".banner2")
+const banner = document.querySelector(".banner");
+const banner2 = document.querySelector(".banner2");
+const footer = document.querySelector("footer");
 
 // -------------------------------------------------- other assignments
 
@@ -58,8 +59,9 @@ getProducts().then((data) => {
     home.innerHTML = html;
 
     loading.style.display = "none";
-    banner.style.display = "block"
-    banner2.style.display = "block"
+    banner.style.display = "block";
+    banner2.style.display = "block";
+    footer.style.display = "flex";
     home.style.display = "grid";
   }, 1000);
 });

@@ -269,8 +269,42 @@ nav > a:not(:last-of-type) {
   width: 100%;
 }
 
-/* footer {
+footer {
+  display: none;
+  margin-top: 50px;
   width: 100%;
-  height: 500px;
-  border: 1px solid black;
-} */
+  height: 200px;
+  border-top: 2px solid red;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 15%;
+}
+
+footer ul {
+  margin-inline: 50px;
+}
+footer ul li {
+  margin-block: 10px;
+}
+footer ul li a {
+  font-size: 20px;
+  color: red;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 50px;
+  transition: all 0.1s;
+}
+
+footer ul li a:hover {
+  color: white;
+  background-color: red;
+}
+.finisher {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  user-select: none;
+  pointer-events: none;
+}
