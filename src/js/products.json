@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Şaftalı",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "2 ₼",
+    "url": "src/images/1.webp"
+  },
+  {
+    "name": "Alma",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "1 ₼",
+    "url": "src/images/5.webp"
+  },
+  {
+    "name": "Soğan",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "3 ₼",
+    "url": "src/images/4.webp"
+  },
+  {
+    "name": "Əjdaha meyvəsi",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "8 ₼",
+    "url": "src/images/2.webp"
+  },
+  {
+    "name": "Kartof",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "4 ₼",
+    "url": "src/images/3.jpg"
+  },
+  {
+    "name": "Portağal",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "5 ₼",
+    "url": "src/images/6.jpg"
+  },
+  {
+    "name": "Şüyüd",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "0.40 ₼",
+    "url": "src/images/7.jpg"
+  },
+  {
+    "name": "Turp",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "0ş65 ₼",
+    "url": "src/images/8.jpg"
+  },
+  {
+    "name": "Banan",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "2 ₼",
+    "url": "src/images/9.webp"
+  },
+  {
+    "name": "Kivi",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Exercitationem, repellendus repudiandae maxime consequatur faceretemporibus, quae rem, atque.",
+    "price": "3 ₼",
+    "url": "src/images/10.webp"
+  }
+]
