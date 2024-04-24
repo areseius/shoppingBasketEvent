@@ -13,21 +13,21 @@ header {
   z-index: 500;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.inputText {
+  padding: 10px 20px;
+  width: 50%;
+  border: none;
+  outline: none;
+  background-color: rgba(128, 128, 128, 0.19);
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.555);
+  font-weight: bold;
+  font-size: 15px;
 }
 
-nav > a {
-  color: red;
-  font-size: 20px;
-  font-weight: 400;
+.inputText::placeholder {
+  color: rgba(0, 0, 0, 0.555);
 }
-nav > a:not(:last-of-type) {
-  margin-right: 20px;
-}
-
 .logo {
   color: red;
   font-size: 40px;
@@ -84,6 +84,8 @@ nav > a:not(:last-of-type) {
   border-radius: 20px;
   padding-inline: 10px;
   user-select: none;
+  transition: all 0.3s;
+  transition-behavior: allow-discrete;
 }
 
 .shopCard figure {
@@ -344,4 +346,9 @@ footer ul li a:hover {
   font-weight: 400;
   user-select: none;
   pointer-events: none;
+}
+
+.hide {
+  display: none;
+  transform: scale(0);
 }

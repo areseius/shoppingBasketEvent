@@ -8,16 +8,17 @@ const basketPageIcon = document.querySelector(".basketPageIcon");
 const basketProducts = document.querySelector(".basketProducts");
 const total = document.querySelector(".total");
 const banner = document.querySelector(".banner");
-const banner2 = document.querySelector(".banner2");
 const footer = document.querySelector("footer");
 const sign = document.querySelector(".sign");
 const clearBasket = document.querySelector(".clearBasket");
+const inputText = document.querySelector(".inputText");
 
 // -------------------------------------------------- other assignments
 
 let buyedProducts = {};
 let totalAmount = 0;
 let products = [];
+let usefulProductsForm = [];
 
 // -------------------------------------------------- getting products
 
@@ -97,9 +98,17 @@ getProducts().then((data) => {
 
     home.innerHTML = html;
 
+    [...home.children].forEach((x) => {
+      usefulProductsForm.push({
+        productNameEng: x.children[0].children[0].alt,
+        productNameAze: x.children[1].children[1].textContent,
+        element: x,
+      });
+    });
+
     loading.style.display = "none";
     banner.style.display = "block";
-    banner2.style.display = "block";
+
     footer.style.display = "flex";
     home.style.display = "grid";
     sign.style.display = "block";
@@ -187,4 +196,18 @@ clearBasket.addEventListener("click", () => {
     total.textContent = "0.00";
     checkBasketIsEmpty(buyedProducts);
   }
+});
+
+// -------------------------------------------------- search products
+
+inputText.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+
+  usefulProductsForm.forEach((product) => {
+    const isVisible =
+      product.productNameEng.toLowerCase().includes(value) ||
+      product.productNameAze.toLowerCase().includes(value);
+
+    product.element.classList.toggle("hide", !isVisible);
+  });
 });
