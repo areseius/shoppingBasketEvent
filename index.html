@@ -35,11 +35,20 @@
     <header>
       <a class="logo" href="">GƏL <span>aldaaa.</span></a>
 
-      <input
-        class="inputText"
-        type="text"
-        placeholder="Search any products you want"
-      />
+      <div class="inputArea">
+        <input
+          class="inputText"
+          type="text"
+          placeholder="Search any products you want"
+        />
+        <div class="filterButtons">
+          <button class="all active" data-filter-name="all">All</button>
+          <button class="fruits" data-filter-name="meyve">Fruits</button>
+          <button class="vegetables" data-filter-name="terevez">
+            Vegetables
+          </button>
+        </div>
+      </div>
 
       <div class="navIcons">
         <a href=""><i class="fa-regular fa-heart"></i></a>

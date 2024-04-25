@@ -12,10 +12,36 @@ header {
   backdrop-filter: blur(10px);
   z-index: 500;
 }
+.inputArea {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filterButtons {
+  margin-top: 10px;
+}
+.filterButtons button {
+  cursor: pointer;
+  padding: 2px 15px;
+  border: 1px solid red;
+  outline: none;
+  background-color: transparent;
+  color: red;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.active {
+  border: 1px solid transparent !important;
+  background-color: red !important;
+  color: white !important;
+}
 
 .inputText {
   padding: 10px 20px;
-  width: 50%;
+  width: 100%;
   border: none;
   outline: none;
   background-color: rgba(128, 128, 128, 0.19);

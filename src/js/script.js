@@ -12,6 +12,7 @@ const footer = document.querySelector("footer");
 const sign = document.querySelector(".sign");
 const clearBasket = document.querySelector(".clearBasket");
 const inputText = document.querySelector(".inputText");
+const filterButtons = document.querySelectorAll("[data-filter-name]");
 
 // -------------------------------------------------- other assignments
 
@@ -68,8 +69,10 @@ const buildBasketProductİtem = (product) => `<div class="basketProduct">
     <i class="fa-solid fa-trash"></i>
   </div>`;
 
-const buildProductItem = (product) =>
-  `<article class="shopCard">
+const buildProductItem = (product, i) =>
+  `<article class="shopCard" data-product-nov="${
+    product.nov == "Meyvə" ? "terevez" : "meyve"
+  }">
   <figure>
     <img src="${product.url}" alt="${product.alt}" />
   </figure>
@@ -80,7 +83,7 @@ const buildProductItem = (product) =>
   </div>
   <div class="cardButtons">
   <button class="basket">
-      <div class="basketWrapper"></div>
+      <div class="basketWrapper" data-product-id="${i}"></div>
       Səbətə at <i class="fa-solid fa-cart-shopping shop"></i>
     </button>
     <i class="fa-regular fa-heart"></i>
@@ -94,7 +97,8 @@ getProducts().then((data) => {
 
     let html = "";
 
-    for (const product of products) html += buildProductItem(product);
+    for (let i = 0; i < products.length; i++)
+      html += buildProductItem(products[i], i);
 
     home.innerHTML = html;
 
@@ -121,13 +125,7 @@ home.addEventListener("click", (e) => {
   if (e.target.className == "basketWrapper") {
     count.textContent++;
 
-    const currentProduct =
-      products[
-        [
-          ...e.target.parentElement.parentElement.parentElement.parentElement
-            .children,
-        ].indexOf(e.target.parentElement.parentElement.parentElement)
-      ];
+    const currentProduct = products[+e.target.dataset.productId];
 
     buyedProducts[currentProduct.alt]
       ? buyedProducts[currentProduct.alt][0]++
@@ -209,5 +207,20 @@ inputText.addEventListener("input", (e) => {
       product.productNameAze.toLowerCase().includes(value);
 
     product.element.classList.toggle("hide", !isVisible);
+  });
+});
+
+// -------------------------------------------------- filter buttons
+
+filterButtons.forEach((x) => {
+  x.addEventListener("click", () => {
+    document.querySelector(".active").classList.remove("active");
+    x.classList.add("active");
+
+    usefulProductsForm.forEach((product) => {
+      if (product.element.dataset.productNov == x.dataset.filterName)
+        product.element.classList.add("hide");
+      else product.element.classList.remove("hide");
+    });
   });
 });
