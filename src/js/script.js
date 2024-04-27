@@ -133,7 +133,7 @@ home.addEventListener("click", (e) => {
   }
 });
 
-// -------------------------------------------------- basket page
+// -------------------------------------------------- open basket page
 
 basketPageIcon.addEventListener("click", () => {
   calculateBasketAmount();
@@ -150,8 +150,14 @@ basketPageIcon.addEventListener("click", () => {
   basketProducts.innerHTML = html;
 });
 
+// -------------------------------------------------- close basket page
+
 basketPage.children[0].children[0].addEventListener("click", () => {
   basketPage.style.display = "none";
+});
+
+basketPage.addEventListener("click", (e) => {
+  e.target.className == "basketPage" && (basketPage.style.display = "none");
 });
 
 // -------------------------------------------------- delete products from basket
